@@ -10,7 +10,15 @@ interface State {
 
 export default class App extends React.Component<Props, State> {
 
-  iconList = ['☀️', '⛅', '🌥️', '🌦️', '☁️', '🌧️', '⛈️']
+  twemojiIconList = [
+    'https://twemoji.maxcdn.com/v/13.0.0/svg/2600.svg',
+    'https://twemoji.maxcdn.com/v/13.0.0/svg/2601.svg',
+    'https://twemoji.maxcdn.com/v/13.0.0/svg/26c5.svg',
+    'https://twemoji.maxcdn.com/v/13.0.0/svg/26c8.svg',
+    'https://twemoji.maxcdn.com/v/13.0.0/svg/1f325.svg',
+    'https://twemoji.maxcdn.com/v/13.0.0/svg/1f326.svg',
+    'https://twemoji.maxcdn.com/v/13.0.0/svg/1f327.svg',
+  ]
   cityList = [
     'Ho Chi Minh City',
     'Tokyo',
@@ -45,8 +53,8 @@ export default class App extends React.Component<Props, State> {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  randomIcon() {
-    return this.iconList[this.random(0, this.iconList.length)]
+  randomIconUrl() {
+    return this.twemojiIconList[this.random(0, this.twemojiIconList.length)]
   }
 
   randomPercentage() {
@@ -74,14 +82,14 @@ export default class App extends React.Component<Props, State> {
       for (let j = 0; j < 7; ++j) {
         let fc = {
           weekday: weekdays[j],
-          icon: this.randomIcon(),
+          icon: this.randomIconUrl(),
           high: this.randomHighTemp(),
           low: this.randomLowTemp()
         };
         forecast = forecast.concat(fc);
       }
       let data = {
-        icon: this.randomIcon(),
+        icon: this.randomIconUrl(),
         currentTemp: this.randomHighTemp(),
         precipitation: this.randomPercentage(),
         huminity: this.randomPercentage(),
@@ -103,7 +111,7 @@ export default class App extends React.Component<Props, State> {
       const front = <div className='front'
         onClick={() => this.handleClick(i)}>
         <div className='front-left'>
-          <span className='front-icon'>{data.icon}</span>
+          <img src={data.icon} className='front-icon' />
           <span className='front-temp'>{data.currentTemp}°C</span>
         </div>
         <div className='front-right'>
@@ -153,7 +161,7 @@ export default class App extends React.Component<Props, State> {
       for (let j = 0; j < 7; ++j) {
         let forecast = <li className='forecast' key={j}>
           <div className='weekday'>{data.forecast[j].weekday}</div>
-          <div className='weekday--icon'>{data.forecast[j].icon}</div>
+          <img src={data.forecast[j].icon} className='weekday--icon' />
           <div className='weekday--temp'><span className='high'>{data.forecast[j].high}°</span> - <span className='low'>{data.forecast[j].low}°</span></div>
         </li>;
 
