@@ -10,11 +10,11 @@
   "license": "ISC",
   "scripts": {
     "clean": "rm -rf docs",
-    "start": "parcel src/index.html",
-    "build-prod": "parcel build src/index.html --public-url ./ --out-dir docs"
+    "start": "parcel index.html",
+    "build-prod": "parcel build index.html --public-url ./ --out-dir docs"
   },
   "dependencies": {
-    "foldy": "^0.1.1",
+    "foldy": "^0.1.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^5.1.0"
