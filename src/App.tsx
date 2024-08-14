@@ -11,19 +11,19 @@ interface State {
 export default class App extends React.Component<Props, State> {
 
   twemojiIconList = [
-    'https://twemoji.maxcdn.com/v/13.0.0/svg/2600.svg',
-    'https://twemoji.maxcdn.com/v/13.0.0/svg/2601.svg',
-    'https://twemoji.maxcdn.com/v/13.0.0/svg/26c5.svg',
-    'https://twemoji.maxcdn.com/v/13.0.0/svg/26c8.svg',
-    'https://twemoji.maxcdn.com/v/13.0.0/svg/1f325.svg',
-    'https://twemoji.maxcdn.com/v/13.0.0/svg/1f326.svg',
-    'https://twemoji.maxcdn.com/v/13.0.0/svg/1f327.svg',
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2600.svg',
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2601.svg',
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/26c5.svg',
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/26c8.svg',
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f325.svg',
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f326.svg',
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0.2/assets/svg/1f327.svg',
   ]
   cityList = [
+    'Berlin',
     'Ho Chi Minh City',
     'Tokyo',
     'Singapore',
-    'London',
     'New York'
   ]
 
